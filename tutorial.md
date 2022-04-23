@@ -74,6 +74,10 @@ touch webpack.config.js
 
 #### React
 
+Install [React](react) & [React-DOM](react-dom). They will be dev dependencies and explicitly defined peer dependencies.
+We don't want our component library to have a dependency on React.
+The app itself decides what React to use albeit it be restricted to requirements from this library.
+
 ```bash
 npm install --save-dev react react-dom
 ```
@@ -91,8 +95,30 @@ Add React & React DOM peer dependencies to tell the `package.json` to tell clien
 }
 ```
 
+#### Storybook
+
+Add [storybook][storybook] - tool for building UI components and pages in isolation.
+We will use `@next` as it is the next major release of Storybook which is compatible with the versions of React used in this tutorial.
+
+```bash
+npx sb@next init # equates to >= ^6.5.0-alpha.64
+```
+
+```bash
+npm run storybook # from the root of the project
+# http://localhost:6006/ + CTL+C to stop from terminal
+```
+
+```bash
+rm -rf src/stories
+```
+
+> Port in use? `netstat -vanp tcp | grep "*."`
+
 ---
 
 [choosealicense.com]: https://choosealicense.com/
 [.gitignore]: https://www.toptal.com/developers/gitignore
 [babel]: https://babeljs.io/
+[react]: https://reactjs.org/
+[storybook]: https://storybook.js.org/
