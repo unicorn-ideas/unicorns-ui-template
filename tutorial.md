@@ -70,6 +70,27 @@ touch webpack.config.js
 }
 ```
 
+### Dependencies
+
+#### React
+
+```bash
+npm install --save-dev react react-dom
+```
+
+Add React & React DOM peer dependencies to tell the `package.json` to tell clients to satisfy that version.
+
+```javascript
+{
+   ...,
+   "peerDependencies": {
+      "react": "^18.0.0",
+      "react-dom": "^18.0.0"
+   },
+   ...
+}
+```
+
 ---
 
 [choosealicense.com]: https://choosealicense.com/
