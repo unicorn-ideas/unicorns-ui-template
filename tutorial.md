@@ -13,6 +13,16 @@ Create an npm package by adding a `package.json` file. Try the `npm` CLI:
 npm init
 ```
 
+Drop in [prettier][prettier] - an opinionated code formatter for consistency.
+
+```bash
+curl -L https://raw.githubusercontent.com/cbillowes/prettier/main/install.sh | bash
+```
+
+```bash
+npm install --save-dev prettier
+```
+
 Choose a [license](choosealicense.com) and add it to your `LICENSE` in your repo.
 
 [.gitignore](.gitignore): hides things from Git so that it is only available to you.
@@ -117,6 +127,7 @@ rm -rf src/stories
 
 ---
 
+[prettier]: https://prettier.io/
 [choosealicense.com]: https://choosealicense.com/
 [.gitignore]: https://www.toptal.com/developers/gitignore
 [babel]: https://babeljs.io/
