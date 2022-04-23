@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "Just another template to rapidly build a component library.",
   "main": "build/unicorns.js",
+  "files": [
+    "build",
+    "LICENSE",
+    "package.json",
+    "README.md"
+  ],
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
