@@ -1,0 +1,24 @@
+{
+  "name": "@unicorn-ideas/unicorns-ui-template",
+  "version": "1.0.0",
+  "description": "Just another template to rapidly build a component library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unicorn-ideas/unicorns-ui.git"
+  },
+  "keywords": [
+    "javascript",
+    "react",
+    "ui"
+  ],
+  "author": "Unicorn Ideas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unicorn-ideas/unicorns-ui/issues"
+  },
+  "homepage": "https://github.com/unicorn-ideas/unicorns-ui#readme"
+}
