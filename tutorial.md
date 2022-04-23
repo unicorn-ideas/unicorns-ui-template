@@ -29,6 +29,23 @@ echo "import React from 'react';\n\nexport default ({ onClick, children }) => <b
 echo "export { default as Button } from './components/Button';" >> src/index.js
 ```
 
+### Babel
+
+Install [Babel][babel] using **Webpack** instructions.
+Babel is a JavaScript compiler so modern code can be understood by browsers.
+
+```bash
+npm install --save-dev babel-loader @babel/core @babel/preset-env @babel/preset-react
+```
+
+```bash
+cat <<EOT >> babel.config.json
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
+}
+EOT
+```
+
 ### Webpack
 
 ```bash
@@ -57,3 +74,4 @@ touch webpack.config.js
 
 [choosealicense.com]: https://choosealicense.com/
 [.gitignore]: https://www.toptal.com/developers/gitignore
+[babel]: https://babeljs.io/

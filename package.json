@@ -29,6 +29,10 @@
   },
   "homepage": "https://github.com/unicorn-ideas/unicorns-ui#readme",
   "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
     "license-webpack-plugin": "^4.0.2",
     "mini-css-extract-plugin": "^2.6.0",
