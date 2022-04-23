@@ -2,8 +2,9 @@
   "name": "@unicorn-ideas/unicorns-ui-template",
   "version": "1.0.0",
   "description": "Just another template to rapidly build a component library.",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
+    "build": "webpack --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +21,13 @@
   "bugs": {
     "url": "https://github.com/unicorn-ideas/unicorns-ui/issues"
   },
-  "homepage": "https://github.com/unicorn-ideas/unicorns-ui#readme"
+  "homepage": "https://github.com/unicorn-ideas/unicorns-ui#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "license-webpack-plugin": "^4.0.2",
+    "mini-css-extract-plugin": "^2.6.0",
+    "terser-webpack-plugin": "^5.3.1",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
+  }
 }
