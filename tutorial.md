@@ -23,6 +23,12 @@ sensitive data like auth keys & environment settings etc, and large files that c
 echo "/node_modules\n/build" >> .gitignore
 ```
 
+```bash
+mkdir -p src/components/Button
+echo "import React from 'react';\n\nexport default ({ onClick, children }) => <button onClick={onClick}>{children}</button>" >> src/components/Button/index.js
+echo "export { default as Button } from './components/Button';" >> src/index.js
+```
+
 ### Webpack
 
 ```bash
