@@ -12,14 +12,15 @@ Just another template to rapidly build a component library. Ideal for beginners.
 
 1. Choose a [license](choosealicense.com) and add it to your `LICENSE` in your repo.
 
-1. Create the React app scaffolding using [@craco/craco](craco).
+1. [.gitignore](.gitignore): hides things from Git so that it is only available to you.
+   It works well to ignore things like personal settings, auto-generated content,
+   sensitive data like auth keys & environment settings etc, and large files that can be shared some place else.
 
    ```bash
-   npm install @craco/craco --save
+   touch .gitignore
    ```
 
 ---
 
-[craco]: https://github.com/gsoft-inc/craco/blob/master/packages/craco/README.md#installation
 [choosealicense.com]: https://choosealicense.com/
 [.gitignore]: https://www.toptal.com/developers/gitignore
