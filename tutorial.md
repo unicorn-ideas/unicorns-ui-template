@@ -131,5 +131,6 @@ rm -rf src/stories
 [choosealicense.com]: https://choosealicense.com/
 [.gitignore]: https://www.toptal.com/developers/gitignore
 [babel]: https://babeljs.io/
-[react]: https://reactjs.org/
+[react]: https://reactjs.org/tutorial/tutorial.html
+[react-dom]: https://reactjs.org/docs/react-dom.html
 [storybook]: https://storybook.js.org/
