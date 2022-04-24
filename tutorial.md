@@ -49,7 +49,7 @@ npm install --save-dev babel-loader @babel/core @babel/preset-env @babel/preset-
 ```
 
 ```bash
-cat <<EOT >> babel.config.json
+cat <<EOT > babel.config.json
 {
   "presets": ["@babel/preset-env", "@babel/preset-react"]
 }
@@ -123,6 +123,30 @@ npm run storybook # from the root of the project
 rm -rf src/stories
 ```
 
+```bash
+cat <<EOT > src/components/Button/index.stories.js
+import React from 'react';
+import Component from './index';
+
+export default {
+  title: 'Components',
+  component: Component,
+};
+
+// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
+const Sut = ({ onClick, children, ...args }) => (
+  <Component onClick={onClick} {...args}>
+    {children}
+  </Component>
+);
+
+export const Button = () => (
+  <Sut onClick={() => console.log('42')}>Hello World</Sut>
+);
+
+EOT
+```
+
 > Port in use? `netstat -vanp tcp | grep "*."`
 
 #### Tailwind
@@ -145,7 +169,7 @@ module.exports = {
 ```
 
 ```bash
-cat <<EOT >> src/index.css
+cat <<EOT > src/index.css
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
