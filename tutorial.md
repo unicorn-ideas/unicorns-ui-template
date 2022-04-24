@@ -125,6 +125,31 @@ rm -rf src/stories
 
 > Port in use? `netstat -vanp tcp | grep "*."`
 
+#### Tailwind
+
+```bash
+npm install --save-dev tailwindcss@latest postcss@latest autoprefixer@latest postcss-loader@latest
+npx tailwindcss init -p
+```
+
+Edit `tailwind.config.js` to add the following:
+
+```javascript
+module.exports = {
+  content: ['./src/**/*.{js,jsx}'],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+
+```bash
+cat <<EOT >> src/index.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+EOT
 ---
 
 [prettier]: https://prettier.io/
@@ -134,3 +159,4 @@ rm -rf src/stories
 [react]: https://reactjs.org/tutorial/tutorial.html
 [react-dom]: https://reactjs.org/docs/react-dom.html
 [storybook]: https://storybook.js.org/
+```
