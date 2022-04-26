@@ -174,6 +174,112 @@ cat <<EOT > src/index.css
 @tailwind components;
 @tailwind utilities;
 EOT
+```
+
+#### React Testing Library
+
+```bash
+npm install --save-dev jest babel-jest @babel/core @babel/preset-env @babel/preset-react @testing-library/react @testing-library/jest-dom
+```
+
+```bash
+jest --init
+```
+
+Add `@babel/plugin-proposal-decorators` to fix [this][decorator-legacy] error.
+
+```bash
+npm install --save-dev @babel/plugin-proposal-decorators @babel/preset-plugin-proposal-decorators
+```
+
+```javascript
+...
+transform: {
+  '\\.(css|scss)$': './config/cssTransform.js',
+  '\\.(js)$': './config/babelTransform.js',
+  '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+    './config/fileTransform.js',
+},
+...
+```
+
+`./config/cssTransform.js`:
+
+```javascript
+'use strict';
+
+// This is a custom Jest transformer turning style imports into empty objects.
+// http://facebook.github.io/jest/docs/en/webpack.html
+
+module.exports = {
+  process() {
+    return 'module.exports = {};';
+  },
+  getCacheKey() {
+    // The output is always the same.
+    return 'cssTransform';
+  },
+};
+```
+
+`./config/babelTransform.js`:
+
+```javascript
+'use strict';
+
+const babelJest = require('babel-jest').default;
+
+module.exports = babelJest.createTransformer({
+  presets: [
+    ['@babel/preset-react'],
+    [
+      '@babel/preset-env',
+      {
+        targets: {
+          node: 'current',
+        },
+      },
+    ],
+  ],
+  plugins: [
+    ['@babel/plugin-syntax-jsx'],
+    [
+      '@babel/plugin-proposal-decorators',
+      {
+        legacy: true,
+      },
+    ],
+  ],
+});
+```
+
+`./config/fileTransform.js`:
+
+```javascript
+'use strict';
+const path = require('path');
+
+module.exports = {
+  process(sourceText, sourcePath, options) {
+    return {
+      code: `module.exports = ${JSON.stringify(path.basename(sourcePath))};`,
+    };
+  },
+};
+```
+
+`./config/fileMock.js`:
+
+```javascript
+module.exports = 'test-file-stub';
+```
+
+`./config/styleMock.js`:
+
+```javascript
+module.exports = {};
+```
+
 ---
 
 [prettier]: https://prettier.io/
@@ -183,4 +289,5 @@ EOT
 [react]: https://reactjs.org/tutorial/tutorial.html
 [react-dom]: https://reactjs.org/docs/react-dom.html
 [storybook]: https://storybook.js.org/
-```
+[testing]: https://testing-library.com/docs/react-testing-library/intro/
+[decorator-legacy]: https://stackoverflow.com/questions/52262084/syntax-error-support-for-the-experimental-syntax-decorators-legacy-isnt-cur
