@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<textarea
+  className="rounded py-1 px-2 border-2 border-primary-500 w-full"
+>
+  The Fuolornis Fire Dragons
+</textarea>
+`;
