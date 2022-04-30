@@ -2,7 +2,7 @@
   "name": "@unicorn-ideas/unicorns-ui-template",
   "version": "1.0.0",
   "description": "Just another template to rapidly build a component library.",
-  "module": "build/unicorns.js",
+  "main": "./build/unicorns.js",
   "files": [
     "build",
     "LICENSE",
